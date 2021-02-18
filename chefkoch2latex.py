@@ -1,7 +1,7 @@
 import urllib.request
 import json
 import sys
-
+import math
 
 def main():
     recipe = json.loads(get())
@@ -27,7 +27,10 @@ def main():
             ingredients = recipe['ingredientGroups'][0]['ingredients']
             for i in ingredients:
                 if i['amount'] != 0.0: # if amount not given, use another notation
-                    recipefile.write("\t\\unit[" + str(int(i['amount'])) + "]{" + i['unit'] + "} & " + i['name'] + i['usageInfo'] + " \\\\\n")
+                    if math.modf(i['amount'])[0] == 0.0:
+                        recipefile.write("\t\\unit[" + str(int(i['amount'])) + "]{" + i['unit'] + "} & " + i['name'] + i['usageInfo'] + " \\\\\n")
+                    else:
+                        recipefile.write("\t\\unit[" + str(i['amount']) + "]{" + i['unit'] + "} & " + i['name'] + i['usageInfo'] + " \\\\\n")
                 else:
                     recipefile.write("\t\\unit[]{" + i['unit'] + "} & " + i['name'] + " \\\\\n")
             recipefile.write("}\n\n")

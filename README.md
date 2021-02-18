@@ -5,7 +5,7 @@ Recipe2LaTeX is a simple repo to fetch recipes from websites such as [Chefkoch.d
 ## Dependencies
 
 ```
-urllib, json, sys, bs4, re
+urllib, json, sys, bs4, re, math
 
 ```
 
