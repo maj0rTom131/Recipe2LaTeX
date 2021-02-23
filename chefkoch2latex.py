@@ -35,8 +35,7 @@ def main():
                     recipefile.write("\t\\unit[]{" + i['unit'] + "} & " + i['name'] + " \\\\\n")
             recipefile.write("}\n\n")
             recipefile.write("\\preparation{\n")
-            recipefile.write("\\\\\n")
-            recipefile.write("\\\\\n")
+            recipefile.write("\n")
             instructions = recipe['instructions'].replace('\r','').replace('\n\n','\n').split('\n') # normalizing instructions text
             for step in instructions:
                 recipefile.write("\t\\step " + step + "\\\\\n\n")

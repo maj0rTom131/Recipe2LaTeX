@@ -35,8 +35,7 @@ def createTex(recipe):
                     recipefile.write("\t\\unit[]{" + ingredients[i] + "} & " + i + " \\\\\n")
             recipefile.write("}\n\n")
             recipefile.write("\\preparation{\n")
-            recipefile.write("\\\\\n")
-            recipefile.write("\\\\\n")
+            recipefile.write("\n")
             instructions = recipe['steps'] # normalizing instructions text
             for step in instructions:
                 recipefile.write("\t\\step " + step + "\\\\\n\n")
