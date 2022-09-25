@@ -1,6 +1,2 @@
 urllib3
 bs4
-re
-json
-sys
-math

@@ -40,7 +40,7 @@ def main():
             for step in instructions:
                 recipefile.write("\t\\step " + step + "\\\\\n\n")
 
-            recipefile.write("}\n\\end{recipe}\n\\newpage")
+            recipefile.write("}\n\\end{recipe}\n\\pagebreak")
             return
     else:
         return
